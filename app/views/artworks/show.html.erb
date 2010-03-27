@@ -1,25 +1,25 @@
-<h1><%=h @page_title = @artwork.name %></h1>
+<h1><%=h @page_title = @artwork.description %></h1>
 
-<%= simple_format(@artwork.description) %>
+<br />
 
+<h2>Access details</h2>
 <%= simple_format(@artwork.access_details) %>
 
 <h2>Contact</h2>
 
 <p>
   <%= link_to @artwork.contact.name, @artwork.contact %><br />
+  <%= @artwork.contact.phone %>
   <%= @artwork.contact.address %>
 </p>
 
-
+<% if @artwork.contact.email %>
 <h2>Request to visit this artwork</h2>
-
 <% form_for(@visit_request, :url => artwork_visit_requests_path(@artwork.id)) do |f| %>
   <%= f.error_messages %>
   
-  <p>You are requesting to visit <%=h @artwork.name %></p>
-
-
+  <p>You can request to visit this artwork using this form</p>
+  <fieldset>
   <p>
     <%= f.label :from_name, 'Your name' %><br />
     <%= f.text_field :from_name %>
@@ -28,12 +28,10 @@
     <%= f.label :from_email, 'Your email' %><br />
     <%= f.text_field :from_email %>
   </p>
-  <p>
-    <%= f.label :from_phone, 'Your phone' %> (optional)<br />
-    <%= f.text_field :from_phone %>
-  </p>
+  </fieldset>
   <p>
     <%= f.submit 'Send' %>
   </p>
+  <% end %>
 <% end %>
 
