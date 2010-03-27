@@ -2,9 +2,6 @@
 <%= page_entries_info(@artworks) %>
 <p class="byline"><%= will_paginate @artworks %></p>
 
-  <ul>
-  <% @artworks.each do |artwork| %>
-      <li><%= link_to artwork.description, artwork %></li>
-  <% end %>
-  </ul>
+<%= render :partial => "artworks", :locals => { :artworks => @artworks } %>
+    
 
