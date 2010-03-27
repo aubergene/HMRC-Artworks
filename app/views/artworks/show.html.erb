@@ -1,3 +1,7 @@
+<h1><%=h @page_title = @artwork.name %></h1>
 
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+<%= simple_format(@artwork.description) %>
+
+<%= simple_format(@artwork.access_details) %>
+
+
