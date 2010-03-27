@@ -13,6 +13,7 @@ POSTCODE_REGX = /[A-Z]{1,2}[0-9R][0-9A-Z]?\s*[0-9][ABD-HJLNP-UW-Z]{2}/i
   end
  
   def extract_phone(text,phone)
+    return unless text
     return phone if (phone and phone != "")
     p_nums = text.scan(/(?:\+44)?[ 0-9\(\)\-]{10,16}/) # UK phone numbers min/max length (incluing bracket, etc.)
     p_nums.map { |x| x.gsub!(/\D/,'') }
@@ -33,7 +34,7 @@ POSTCODE_REGX = /[A-Z]{1,2}[0-9R][0-9A-Z]?\s*[0-9][ABD-HJLNP-UW-Z]{2}/i
     end
   end
 
-yaml = Dir.glob("scrape_parse1/*.yaml")
+yaml = Dir.glob("/Users/ben/scrape_parse1/*.yaml")
 yaml.each do |file|
   artwork_atts = YAML::load_file(file)
   
