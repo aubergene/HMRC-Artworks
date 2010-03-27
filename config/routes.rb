@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :contact
-  map.resources :artworks do |artworks|
+  map.resources :contacts
+  map.resources :artworks, :collection => { :search => :get } do |artworks|
     artworks.resources :visit_requests
   end
   

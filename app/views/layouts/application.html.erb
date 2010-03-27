@@ -13,6 +13,11 @@
     <a href="/">Home</a>
     <a href="/artworks">Artworks</a>
   </nav>
+
+  <% form_tag '/artworks/search', :method => :get do %>
+    <%= text_field_tag 'q', params[:q] %>
+    <%= submit_tag 'Search', :name => nil %>
+  <% end %>
 </header>
 
 <p style="color: green"><%= flash[:notice] %></p>
