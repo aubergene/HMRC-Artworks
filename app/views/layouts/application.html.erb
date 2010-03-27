@@ -6,23 +6,92 @@
   <%= stylesheet_link_tag :all %>
 </head>
 <body>
-
-<header>
-  <h2>HMRC Artworks</h2>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/artworks">Artworks</a>
-  </nav>
-
-  <% form_tag '/artworks/search', :method => :get do %>
-    <%= text_field_tag 'q', params[:q] %>
-    <%= submit_tag 'Search', :name => nil %>
-  <% end %>
-</header>
-
-<p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield %>
-
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">HMRC Artworks</a></h1>
+      <h2><a href="http://www.freecsstemplates.org/">By Free CSS Templates</a></h2>
+    </div>
+    <!-- end div#logo -->
+  </div>
+  <!-- end div#header -->
+  <div id="menu">
+    <ul>
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/artworks">Artworks</a></li>
+      <li><a href="/contacts">Contact</a></li>
+    </ul>
+  </div>
+  <!-- end div#menu -->
+  <div id="splash"><img src="images/img03.jpg" width="940" height="255" alt="" /></div>
+  <div id="page">
+    <div id="page-bgtop">
+      <div id="content">
+        <% unless flash.empty? %>
+        <p style="color: green"><%= flash[:notice] %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+      <!-- end div#content -->
+      <div id="sidebar">
+        <ul>
+          <li id="search">
+            <h2>Search</h2>
+            <% form_tag '/artworks/search', :method => :get do %>
+              <%= text_field_tag 'q', params[:q] %>
+              <%= submit_tag 'Search', :name => nil %>
+            <% end %>
+          </li>
+          <li>
+            <h2>Lorem Ipsum</h2>
+            <ul>
+              <li><a href="#">Fusce dui neque fringilla</a></li>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Volutpat Dolore</h2>
+            <ul>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Bebindum Mauris </h2>
+            <ul>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Magna lacus bibendum mauris</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+              <li><a href="#">Nec metus sed donec</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+              <li><a href="#">Eget tempor eget nonummy</a></li>
+              <li><a href="#">Velit semper nisi molestie</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- end div#sidebar -->
+      <div style="clear: both; height: 1px"></div>
+    </div>
+  </div>
+  <!-- end div#page -->
+  <div id="footer">
+    <p>Copyright &copy; 2007 Lily Pads. All Rights Reserved. Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. </p>
+    <p id="links"><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+  </div>
+  <!-- end div#footer -->
+</div>
+<!-- end div#wrapper -->
 </body>
-</html>
+
