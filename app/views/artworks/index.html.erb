@@ -1,13 +1,10 @@
 <h1>HMRC Artworks</h1>
+<%= page_entries_info(@artworks) %>
+<p class="byline"><%= will_paginate @artworks %></p>
 
-<table>
-  <tr>
-  </tr>
-
-<% @artworks.each do |artwork| %>
-  <tr>
-    <td><%= link_to artwork.description, artwork %></td>
-  </tr>
-<% end %>
-</table>
+  <ul>
+  <% @artworks.each do |artwork| %>
+      <li><%= link_to artwork.description, artwork %></li>
+  <% end %>
+  </ul>
 

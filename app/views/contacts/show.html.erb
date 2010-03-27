@@ -1,3 +1,9 @@
 <h1><%=h @page_title = @contact.name %></h1>
 
 <%= simple_format(@contact.address) %>
+
+  <ul>
+     <% @contact.artworks.each do |artwork| %>
+         <li><%= link_to artwork.description, artwork %></li>
+     <% end %>
+     </ul>

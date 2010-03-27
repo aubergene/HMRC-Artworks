@@ -14,6 +14,10 @@
 </p>
 
 <% if @artwork.contact.email %>
+<% number_of_artworks = @artwork.contact.artworks.size %>
+<% if number_of_artworks > 1 %>
+<p>This person can also be contacted to visit <%= link_to "#{number_of_artworks} other artworks", @artwork.contact %>.</p>
+<% end %>
 <h2>Request to visit this artwork</h2>
 <% form_for(@visit_request, :url => artwork_visit_requests_path(@artwork.id)) do |f| %>
   <%= f.error_messages %>
