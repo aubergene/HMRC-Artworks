@@ -24,5 +24,9 @@ class ArtworksController < ApplicationController
       format.xml  { render :xml => @artwork }
     end
   end
+  
+  def search
+    @artworks = Artwork.paginate(:all, :conditions => ["description LIKE ?", "%" + params[:q] + "%"], :page => request[:page])
+  end
 
 end

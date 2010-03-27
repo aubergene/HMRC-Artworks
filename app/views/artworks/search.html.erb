@@ -1,0 +1,11 @@
+<h1>Search HMRC Artworks</h1>
+
+<%= page_entries_info(@artworks) %>
+
+<% @artworks.each do |artwork| %>
+  <div>
+    <%= link_to artwork.description, artwork %>
+  </div>
+<% end %>
+
+<%= will_paginate @artworks %>
