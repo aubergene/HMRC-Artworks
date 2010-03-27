@@ -6,9 +6,7 @@
 
 <% @artworks.each do |artwork| %>
   <tr>
-    <td><%= link_to 'Show', artwork %></td>
-    <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
-    <td><%= link_to 'Destroy', artwork, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to artwork.description, artwork %></td>
   </tr>
 <% end %>
 </table>

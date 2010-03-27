@@ -1,18 +1,4 @@
-<h1><%=h @page_title = @artwork.name %></h1>
-
-<%= simple_format(@artwork.description) %>
-
-<%= simple_format(@artwork.access_details) %>
-
-<h2>Contact</h2>
-
-<p>
-  <%= link_to @artwork.contact.name, @artwork.contact %><br />
-  <%= @artwork.contact.address %>
-</p>
-
-
-<h2>Request to visit this artwork</h2>
+<h1>Request to visit an artwork</h1>
 
 <% form_for(@visit_request, :url => artwork_visit_requests_path(@artwork.id)) do |f| %>
   <%= f.error_messages %>

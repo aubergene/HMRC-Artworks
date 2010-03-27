@@ -1,0 +1,24 @@
+<h1>Editing visit_request</h1>
+
+<% form_for(@visit_request) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :from_name %><br />
+    <%= f.text_field :from_name %>
+  </p>
+  <p>
+    <%= f.label :from_email %><br />
+    <%= f.text_field :from_email %>
+  </p>
+  <p>
+    <%= f.label :from_phone %><br />
+    <%= f.text_field :from_phone %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @visit_request %> |
+<%= link_to 'Back', visit_requests_path %>
