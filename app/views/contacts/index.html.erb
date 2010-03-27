@@ -1,0 +1,10 @@
+<h1>Contacts</h1>
+
+<p>There are <%= @contacts.size %> registered contacts.</p>
+
+<ul>
+<% @contacts.each do |contact| %>
+    <li><%= link_to contact.name || "No name given", contact %></li>
+<% end %>
+</ul>
+
