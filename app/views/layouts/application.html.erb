@@ -10,20 +10,22 @@
   <div id="header">
     <div id="logo">
       <h1><a href="#">HMRC Artworks</a></h1>
-      <h2><a href="http://www.freecsstemplates.org/">By Free CSS Templates</a></h2>
+      <h2><a href="http://www.freecsstemplates.org/">By Ben and Julian</a></h2>
     </div>
     <!-- end div#logo -->
   </div>
   <!-- end div#header -->
   <div id="menu">
     <ul>
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="/artworks">Artworks</a></li>
-      <li><a href="/contacts">Contact</a></li>
+      <li class="<%= "active" if current_page?(root_path) %>"><a href="/">Home</a></li>
+      <li class="<%= "active" if current_page?(:controller => 'artworks') %>"><a href="/artworks">Artworks</a></li>
+      <li class="<%= "active" if current_page?(:controller => 'contacts') %>"><a href="/contacts">Contact</a></li>
     </ul>
   </div>
   <!-- end div#menu -->
-  <div id="splash"><img src="images/img03.jpg" width="940" height="255" alt="" /></div>
+  <% if current_page?(root_path) %>
+  <div id="splash"><img src="/images/img03.jpg" width="940" height="255" alt="" /></div>
+  <% end %>
   <div id="page">
     <div id="page-bgtop">
       <div id="content">
@@ -41,43 +43,6 @@
               <%= text_field_tag 'q', params[:q] %>
               <%= submit_tag 'Search', :name => nil %>
             <% end %>
-          </li>
-          <li>
-            <h2>Lorem Ipsum</h2>
-            <ul>
-              <li><a href="#">Fusce dui neque fringilla</a></li>
-              <li><a href="#">Eget tempor eget nonummy</a></li>
-              <li><a href="#">Magna lacus bibendum mauris</a></li>
-              <li><a href="#">Nec metus sed donec</a></li>
-              <li><a href="#">Magna lacus bibendum mauris</a></li>
-              <li><a href="#">Velit semper nisi molestie</a></li>
-              <li><a href="#">Eget tempor eget nonummy</a></li>
-            </ul>
-          </li>
-          <li>
-            <h2>Volutpat Dolore</h2>
-            <ul>
-              <li><a href="#">Nec metus sed donec</a></li>
-              <li><a href="#">Magna lacus bibendum mauris</a></li>
-              <li><a href="#">Velit semper nisi molestie</a></li>
-              <li><a href="#">Eget tempor eget nonummy</a></li>
-              <li><a href="#">Nec metus sed donec</a></li>
-              <li><a href="#">Magna lacus bibendum mauris</a></li>
-              <li><a href="#">Velit semper nisi molestie</a></li>
-            </ul>
-          </li>
-          <li>
-            <h2>Bebindum Mauris </h2>
-            <ul>
-              <li><a href="#">Nec metus sed donec</a></li>
-              <li><a href="#">Magna lacus bibendum mauris</a></li>
-              <li><a href="#">Velit semper nisi molestie</a></li>
-              <li><a href="#">Eget tempor eget nonummy</a></li>
-              <li><a href="#">Nec metus sed donec</a></li>
-              <li><a href="#">Velit semper nisi molestie</a></li>
-              <li><a href="#">Eget tempor eget nonummy</a></li>
-              <li><a href="#">Velit semper nisi molestie</a></li>
-            </ul>
           </li>
         </ul>
       </div>
