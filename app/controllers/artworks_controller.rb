@@ -5,7 +5,7 @@ class ArtworksController < ApplicationController
   end
 
   def index
-    @artworks = Artwork.paginate(:all, :page => params[:page])
+    @artworks = Artwork.paginate(:all, :page => params[:page], :order => "category")
 
     respond_to do |format|
       format.html # index.html.erb

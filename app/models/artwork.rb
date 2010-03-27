@@ -25,7 +25,7 @@ class Artwork < ActiveRecord::Base
   end
 
   def friendly_html_description
-    '<span class="category">'+self.categorize+"</span> "+self.description
+    self.description
   end
 
 end
