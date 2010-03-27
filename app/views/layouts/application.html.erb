@@ -30,7 +30,9 @@
     <div id="page-bgtop">
       <div id="content">
         <% unless flash.empty? %>
+        <div id="flash">
         <p style="color: green"><%= flash[:notice] %></p>
+        </div>
         <% end %>
         <%= yield %>
       </div>

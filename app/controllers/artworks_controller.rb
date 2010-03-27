@@ -26,7 +26,7 @@ class ArtworksController < ApplicationController
   end
   
   def search
-    @artworks = Artwork.paginate(:all, :conditions => ["description LIKE ?", "%" + params[:q] + "%"], :page => request[:page])
+    @artworks = Artwork.paginate(:all, :conditions => ["description LIKE ? OR description LIKE ?", "% " + params[:q] + "%", params[:q] + "%"], :page => request[:page])
   end
 
 end

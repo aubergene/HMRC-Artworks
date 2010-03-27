@@ -19,6 +19,16 @@ body {
 	color: #231F20;
 }
 
+#flash {
+	background: gold;
+	padding: 0 8px;
+}
+
+.highlight {
+	background: Yellow;
+	padding: 2px;
+}
+
 h1, h2, h3 {
 }
 

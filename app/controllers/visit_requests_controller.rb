@@ -43,11 +43,12 @@ class VisitRequestsController < ApplicationController
   # POST /visit_requests.xml
   def create
     @visit_request = VisitRequest.new(params[:visit_request])
+    @artwork = Artwork.new(params[:artwork])
 
     respond_to do |format|
       if @visit_request.save
-        flash[:notice] = 'VisitRequest was successfully created.'
-        format.html { redirect_to(@visit_request) }
+        flash[:notice] = 'Your request to visit this artwork has been sent.'
+        format.html { redirect_to(@artwork) }
         format.xml  { render :xml => @visit_request, :status => :created, :location => @visit_request }
       else
         format.html { render :action => "new" }

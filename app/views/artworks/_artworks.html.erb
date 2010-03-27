@@ -5,6 +5,6 @@
         <h2><%= artwork.category%></h2>
         <% artwork_category = artwork.category %>
     <% end %>
-    <li><%= link_to artwork.friendly_html_description, artwork %></li>
+    <li><%= link_to highlight(artwork.friendly_html_description, params[:q]), artwork %></li>
 <% end %>
 </ul>
