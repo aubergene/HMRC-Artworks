@@ -2,8 +2,4 @@
 
 <%= simple_format(@contact.address) %>
 
-  <ul>
-     <% @contact.artworks.each do |artwork| %>
-         <li><%= link_to artwork.description, artwork %></li>
-     <% end %>
-     </ul>
+<%= render :partial => "artworks/artworks", :locals => { :artworks => @contact.artworks } %>

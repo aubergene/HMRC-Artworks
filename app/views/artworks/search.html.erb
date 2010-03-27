@@ -4,11 +4,8 @@
   <div class="entry">
     <%= page_entries_info(@artworks) %>
 
-    <ul>
-    <% @artworks.each do |artwork| %>
-        <li><%= link_to artwork.description, artwork %></li>
-    <% end %>
-    </ul>
+    <%= render :partial => "artworks", :locals => { :artworks => @artworks } %>
+    
 
   </div>
 </div>
