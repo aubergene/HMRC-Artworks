@@ -1,6 +1,9 @@
 class ArtworksController < ApplicationController
-  # GET /artworks
-  # GET /artworks.xml
+
+  def home_page
+    @artworks_count = Artwork.count
+  end
+
   def index
     @artworks = Artwork.all
 
@@ -14,6 +17,7 @@ class ArtworksController < ApplicationController
   # GET /artworks/1.xml
   def show
     @artwork = Artwork.find(params[:id])
+    @visit_request = VisitRequest.new
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,0 +1,21 @@
+<h1>Listing visit_requests</h1>
+
+<table>
+  <tr>
+    <th>From name</th>
+    <th>From email</th>
+    <th>From phone</th>
+  </tr>
+
+<% @visit_requests.each do |visit_request| %>
+  <tr>
+    <td><%=h visit_request.from_name %></td>
+    <td><%=h visit_request.from_email %></td>
+    <td><%=h visit_request.from_phone %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New visit_request', new_artwork_visit_request_path %>

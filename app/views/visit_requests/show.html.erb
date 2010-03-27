@@ -1,0 +1,18 @@
+<p>
+  <b>From name:</b>
+  <%=h @visit_request.from_name %>
+</p>
+
+<p>
+  <b>From email:</b>
+  <%=h @visit_request.from_email %>
+</p>
+
+<p>
+  <b>From phone:</b>
+  <%=h @visit_request.from_phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_visit_request_path(@visit_request) %> |
+<%= link_to 'Back', visit_requests_path %>

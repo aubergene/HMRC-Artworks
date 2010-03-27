@@ -6,7 +6,7 @@ class CreateArtworks < ActiveRecord::Migration
       t.string   :name
       t.string   :category
       t.string   :country
-      t.text     :descripton
+      t.text     :description
       t.text     :access_details
 
       t.timestamps

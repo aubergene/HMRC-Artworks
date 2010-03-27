@@ -52,7 +52,7 @@ yaml.each do |file|
   art = contact.artworks.create(
     :hmrc_id => artwork_atts["unique_id"].to_i,
     :category => artwork_atts["category"],
-    :descripton => artwork_atts["description"],
+    :description => artwork_atts["description"],
     :access_details => artwork_atts["access_details"]
   )
   
